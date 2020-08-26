@@ -5,6 +5,7 @@ import Input from './src/components/Input';
 
 export default function App() {
   const [cep, setCep] = useState('');
+  const [phone, setPhone] = useState('');
   
 
   return (
@@ -16,6 +17,15 @@ export default function App() {
         placeholder="Enter your Zip Code"
         placeholderTextColor="#212121"
         inputMaskChange={(text: string) => setCep(text)}
+      />
+
+      <Input
+        mask="phone"
+        value={phone}
+        maxLength={14}
+        placeholder="What's your phone?"
+        placeholderTextColor="#212121"
+        inputMaskChange={(text: string) => setPhone(text)}
       />
       <StatusBar style="auto" />
     </View>

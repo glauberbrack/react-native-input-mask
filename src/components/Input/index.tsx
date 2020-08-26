@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, TextInput } from 'react-native';
 
-import { maskCep } from '../../utils/masks';
+import { maskCep, maskPhone } from '../../utils/masks';
 
 interface InputProps {
     mask: 'cep' | 'phone' | 'currency',
@@ -11,8 +11,14 @@ interface InputProps {
 const Input: React.FC<InputProps> = ({ mask, inputMaskChange, ...rest }) => {
   
     function handleChange(text: string) {
-        const value = maskCep(text)
-        inputMaskChange(value)
+        if( mask === 'cep') {
+            const value = maskCep(text)
+            inputMaskChange(value)
+        }
+        else if (mask === 'phone') {            
+            const value = maskPhone(text)
+            inputMaskChange(value)
+        }
     }
 
     return (
