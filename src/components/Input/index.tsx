@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 
 import { styles } from './styles';
 
@@ -8,9 +8,10 @@ import { maskCep, maskPhone, maskCurrency } from '../../utils/masks';
 interface InputProps {
     mask: 'cep' | 'phone' | 'currency',
     inputMaskChange: any;
+    label: string;
 }
 
-const Input: React.FC<InputProps> = ({ mask, inputMaskChange, ...rest }) => {
+const Input: React.FC<InputProps> = ({ mask, inputMaskChange, label, ...rest }) => {
   
     function handleChange(text: string) {
         if( mask === 'cep') {
@@ -28,15 +29,18 @@ const Input: React.FC<InputProps> = ({ mask, inputMaskChange, ...rest }) => {
     }
 
     return (
-        <>
+        <View>
+            <Text style={styles.label}>{label}</Text>
+
             <TextInput
                 style={styles.input}
                 onChangeText={ text => handleChange(text)}
                 keyboardType="number-pad"
+                placeholderTextColor="#999999"
                 {...rest}        
             />
 
-        </>
+        </View>
   );
 }
 

@@ -20,28 +20,27 @@ export default function App() {
         <Text style={styles.headerDescriptionText}>Try yourself</Text>
         <Input
             mask="cep"
+            label="ZIP CODE"
             value={cep}
             maxLength={9}
-            placeholder="Enter your Zip Code"
-            placeholderTextColor="#212121"
+            placeholder="00000-000"
             inputMaskChange={(text: string) => setCep(text)}
         />
 
         <Input
             mask="phone"
+            label="Phone or Cellphone"
             value={phone}
             maxLength={14}
-            placeholder="What's your phone?"
-            placeholderTextColor="#212121"
+            placeholder="(00)00000-0000"
             inputMaskChange={(text: string) => setPhone(text)}
         />
 
         <Input
             mask="currency"
+            label="Currency (BRL)"
             value={currency}
-            maxLength={14}
-            placeholder="Enter the value"
-            placeholderTextColor="#212121"
+            placeholder="100,00"
             inputMaskChange={(text: string) => setCurrency(text)}
         />  
     </View>
