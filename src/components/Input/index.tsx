@@ -1,17 +1,27 @@
 import React from 'react';
 import { StyleSheet, View, Text, TextInput } from 'react-native';
 
+import { maskCep } from '../../utils/masks';
+
 interface InputProps {
     mask: 'cep' | 'phone' | 'currency',
     inputMaskChange: any;
 }
 
 const Input: React.FC<InputProps> = ({ mask, inputMaskChange, ...rest }) => {
-  return (
+
+  
+    function handleChange(text: string) {
+        const value = maskCep(text)
+        inputMaskChange(value)
+    }
+
+    return (
       <>
-      
+
         <TextInput
             style={styles.input}
+            onChangeText={ text => handleChange(text)}
             {...rest}        
         />
 
