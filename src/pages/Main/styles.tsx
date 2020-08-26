@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
     logo: {
         marginTop: 100,
         marginBottom: 10,
-        height: '15%',
-        width: '15%',
+        height: '25%',
+        width: '25%',
     },
     headerTitleText: {
         fontSize: 22,
@@ -23,6 +23,6 @@ export const styles = StyleSheet.create({
     headerDescriptionText: {
         fontSize: 14,
         color: '#FFF',
-        marginBottom: 30
+        marginBottom: 20
     }
 })

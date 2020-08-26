@@ -3,10 +3,10 @@ import { View, Text, TextInput } from 'react-native';
 
 import { styles } from './styles';
 
-import { maskCep, maskPhone, maskCurrency } from '../../utils/masks';
+import { maskCep, maskPhone, maskCurrency, maskCpf} from '../../utils/masks';
 
 interface InputProps {
-    mask: 'cep' | 'phone' | 'currency',
+    mask: 'cep' | 'phone' | 'currency' | 'cpf',
     inputMaskChange: any;
     label: string;
 }
@@ -24,6 +24,10 @@ const Input: React.FC<InputProps> = ({ mask, inputMaskChange, label, ...rest }) 
         }
         else if (mask === 'currency') {            
             const value = maskCurrency(text)
+            inputMaskChange(value)
+        }
+        else if (mask === 'cpf') {            
+            const value = maskCpf(text)
             inputMaskChange(value)
         }
     }

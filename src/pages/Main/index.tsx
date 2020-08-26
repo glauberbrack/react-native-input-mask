@@ -11,6 +11,7 @@ export default function App() {
   const [cep, setCep] = useState('');
   const [phone, setPhone] = useState('');
   const [currency, setCurrency] = useState('');
+  const [cpf, setCpf] = useState('');
   
 
   return (
@@ -21,9 +22,19 @@ export default function App() {
                 <Text style={styles.headerTitleText}>We have awesome masks here!</Text>
                 <Text style={styles.headerDescriptionText}>Try yourself</Text>
             </View>
+            
+            <Input
+                mask="cpf"
+                label="CPF"
+                value={cpf}
+                maxLength={14}
+                placeholder="000.000.000-00"
+                inputMaskChange={(text: string) => setCpf(text)}
+            />
+
             <Input
                 mask="cep"
-                label="ZIP CODE"
+                label="Zip Code"
                 value={cep}
                 maxLength={9}
                 placeholder="00000-000"
@@ -45,7 +56,8 @@ export default function App() {
                 value={currency}
                 placeholder="100,00"
                 inputMaskChange={(text: string) => setCurrency(text)}
-            /> 
+            />
+ 
         </ScrollView>
     </View>
   );
