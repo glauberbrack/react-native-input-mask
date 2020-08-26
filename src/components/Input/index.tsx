@@ -9,7 +9,6 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({ mask, inputMaskChange, ...rest }) => {
-
   
     function handleChange(text: string) {
         const value = maskCep(text)
@@ -17,15 +16,14 @@ const Input: React.FC<InputProps> = ({ mask, inputMaskChange, ...rest }) => {
     }
 
     return (
-      <>
+        <>
+            <TextInput
+                style={styles.input}
+                onChangeText={ text => handleChange(text)}
+                {...rest}        
+            />
 
-        <TextInput
-            style={styles.input}
-            onChangeText={ text => handleChange(text)}
-            {...rest}        
-        />
-
-      </>
+        </>
   );
 }
 
