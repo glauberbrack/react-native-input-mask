@@ -1,46 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Input from './src/components/Input';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+
+import Main from './src/pages/Main';
 
 export default function App() {
-  const [cep, setCep] = useState('');
-  const [phone, setPhone] = useState('');
-  const [currency, setCurrency] = useState('');
   
 
   return (
-    <View style={styles.container}>
-      <Input
-        mask="cep"
-        value={cep}
-        maxLength={9}
-        placeholder="Enter your Zip Code"
-        placeholderTextColor="#212121"
-        inputMaskChange={(text: string) => setCep(text)}
-      />
-
-      <Input
-        mask="phone"
-        value={phone}
-        maxLength={14}
-        placeholder="What's your phone?"
-        placeholderTextColor="#212121"
-        inputMaskChange={(text: string) => setPhone(text)}
-      />
-
-      <Input
-        mask="currency"
-        value={currency}
-        maxLength={14}
-        placeholder="Enter the value"
-        placeholderTextColor="#212121"
-        inputMaskChange={(text: string) => setCurrency(text)}
-      />  
-
-
+    <>
+      <Main/>
       <StatusBar style="auto" />
-    </View>
+    </>
   );
 }
 

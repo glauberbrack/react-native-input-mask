@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput } from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
 
 import { maskCep, maskPhone, maskCurrency } from '../../utils/masks';
 
