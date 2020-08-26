@@ -15,7 +15,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-        <Image source={logo} />
+        <Image source={logo} style={styles.logo} />
+        <Text style={styles.headerTitleText}>We have awesome masks here!</Text>
+        <Text style={styles.headerDescriptionText}>Try yourself</Text>
         <Input
             mask="cep"
             value={cep}
