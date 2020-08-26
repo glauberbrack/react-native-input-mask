@@ -30,6 +30,7 @@ const Input: React.FC<InputProps> = ({ mask, inputMaskChange, ...rest }) => {
             <TextInput
                 style={styles.input}
                 onChangeText={ text => handleChange(text)}
+                keyboardType="number-pad"
                 {...rest}        
             />
 
