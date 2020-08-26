@@ -6,17 +6,19 @@ export const styles = StyleSheet.create({
         backgroundColor: '#082A44',
         alignItems: 'center',
     },
-
+    header: {
+        alignItems: 'center'
+    },
     logo: {
-        marginTop: 150,
+        marginTop: 100,
         marginBottom: 10,
         height: '15%',
-        width: '15%'
+        width: '15%',
     },
     headerTitleText: {
         fontSize: 22,
         color: '#FFF',
-        marginBottom: 5
+        marginBottom: 5,
     },
     headerDescriptionText: {
         fontSize: 14,
