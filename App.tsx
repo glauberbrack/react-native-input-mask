@@ -6,6 +6,7 @@ import Input from './src/components/Input';
 export default function App() {
   const [cep, setCep] = useState('');
   const [phone, setPhone] = useState('');
+  const [currency, setCurrency] = useState('');
   
 
   return (
@@ -27,6 +28,17 @@ export default function App() {
         placeholderTextColor="#212121"
         inputMaskChange={(text: string) => setPhone(text)}
       />
+
+      <Input
+        mask="currency"
+        value={currency}
+        maxLength={14}
+        placeholder="Enter the value"
+        placeholderTextColor="#212121"
+        inputMaskChange={(text: string) => setCurrency(text)}
+      />  
+
+
       <StatusBar style="auto" />
     </View>
   );

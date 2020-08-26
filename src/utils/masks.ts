@@ -21,4 +21,4 @@ function maskCurrency (value: string) {
 }
 
 
-export { maskCep, maskPhone }
+export { maskCep, maskPhone, maskCurrency }
